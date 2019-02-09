@@ -1,0 +1,115 @@
+
+
+
+10:E7:C6:EE:E5:03 computer
+8C:EB:C6:7A:63:2B cellulare
+
+sudo iptables -t nat -A PREROUTING -p tcp --destination-port 65177 -m mac --mac-source 00:FF:A0:2A:C4:28 -j DNAT --to-destination 192.168.0.1
+sudo iptables -t nat -A PREROUTING -p tcp --destination-port 65177 -m mac --mac-source 68:EC:C5:B0:64:27 -j DNAT --to-destination 192.168.0.1
+
+sudo iptables -t nat -A PREROUTING -d 192.168.1.111 -p tcp --destination-port 65177 -m mac --mac-source ! 8C:EB:C6:7A:63:2B -j DNAT --to-destination 192.168.0.1
+iptables -t nat -A PREROUTING -d 192.168.1.111 -p tcp --destination-port 65177 -m mac --mac-source 8C:EB:C6:7A:63:2B -j ACCEPT
+
+sudo iptables -A INPUT -p tcp --destination-port 65177 -j ACCEPT
+sudo iptables -A INPUT -d 192.168.1.111 -p tcp --destination-port 65177 -m mac --mac-source 8C:EB:C6:7A:63:2B -j ACCEPT
+
+
+/sbin/iptables -A INPUT -p tcp --destination-port 20177 -j DROP
+/sbin/iptables -A INPUT -p tcp --destination-port 20177 -m mac --mac-source 8C:EB:C6:7A:63:2B -j ACCEPT
+sudo iptables -A INPUT -p tcp --destination-port 5900:5909 -m mac --mac-source 8C:EB:C6:7A:63:2B -j ACCEPT
+sudo iptables -A INPUT -p tcp --destination-port 5800:5809 -m mac --mac-source ‎8C:EB:C6:7A:63:2B -j ACCEPT
+sudo iptables -A INPUT -p tcp --destination-port 5800 -m mac --mac-source ‎8C:EB:C6:7A:63:2B -j ACCEPT
+sudo iptables -A INPUT -p tcp --destination-port 5809 -m mac --mac-source ‎8C:EB:C6:7A:63:2B -j ACCEPT
+
+
+Suffisso DNS specifico della connessione:
+Descrizione: TAP Adapter OAS NDIS 6.0
+Indirizzo fisico: ‎00-FF-A0-2A-C4-28
+DHCP abilitato: No
+Indirizzo IPv4: 10.8.0.6
+Subnet mask IPv4: 255.255.255.252
+Gateway predefinito IPv4:
+Server DNS IPv4: 8.8.8.8, 8.8.4.4
+Server WINS IPv4:
+NetBIOS su TCP/IP attivato: Sì
+Indirizzo IPv6 locale rispetto al collegamento: fe80::1545:b3eb:5a95:964d%15
+Gateway predefinito IPv6:
+Server DNS IPv6:
+
+WIFI
+Suffisso DNS specifico della connessione: station
+Descrizione: Intel(R) Dual Band Wireless-AC 3168
+Indirizzo fisico: ‎68-EC-C5-B0-64-27
+DHCP abilitato: Sì
+Indirizzo IPv4: 192.168.1.6
+Subnet mask IPv4: 255.255.255.0
+Lease ottenuto: venerdì 25 gennaio 2019 23:10:06
+Scadenza lease: sabato 26 gennaio 2019 23:10:03
+Gateway predefinito IPv4: 192.168.1.1
+Server DHCP IPv4: 192.168.1.1
+Server DNS IPv4: 192.168.1.1
+Server WINS IPv4:
+NetBIOS su TCP/IP attivato: Sì
+
+ETH
+Suffisso DNS specifico della connessione:
+Descrizione: Realtek PCIe GBE Family Controller
+Indirizzo fisico: ‎10-E7-C6-EE-E5-03
+DHCP abilitato: No
+Indirizzo IPv4: 192.168.1.17
+Subnet mask IPv4: 255.255.255.0
+Gateway predefinito IPv4: 192.168.1.1
+Server DNS IPv4: 8.8.8.8, 8.8.4.4
+Server WINS IPv4:
+NetBIOS su TCP/IP attivato: Sì
+
+sudo netstat -pant | grep smb
+
+# Regole Samba
+# iptables -A INPUT -d 192.168.1.111 -p udp --dport 137 -j DROP
+# iptables -A INPUT -d 192.168.1.111 -p udp --dport 138 -j DROP
+# iptables -A INPUT -d 192.168.1.111 -p tcp --dport 139 -j DROP
+# iptables -A INPUT -d 192.168.1.111 -p tcp --dport 445 -j DROP
+
+
+sudo iptables -P INPUT   DROP
+sudo iptables -P FORWARD   DROP
+
+#consentire tutto il traffico interno al nostro computer, che passa per l'interfaccia di loopback "lo".
+sudo iptables -A INPUT  -i lo -j ACCEPT
+
+#lasciare entrare tutto il traffico che è stato da noi richiesto
+sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+#Consente connessioni ingresso su Porta SSH
+sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+
+#Consente connessioni ingresso su Porta Sonja
+sudo iptables -A INPUT -p tcp --dport 65177 -j ACCEPT
+
+iptables -A INPUT -d 192.168.1.111 -p udp --dport 138 -j DROP
+
+----- BLOCCA TUTTE CONNESSIONI IN INGRESSO
+sudo iptables -P INPUT   DROP
+----- ACCETTO CONNESSIONI SAMBA DA MAC PC DAVIDE
+sudo iptables -A INPUT -d 192.168.1.111 -p udp --dport 137 -m mac --mac-source ‎10:E7:C6:EE:E5:03 -j ACCEPT
+sudo iptables -A INPUT -d 192.168.1.111  -p udp --dport 138 -m mac --mac-source ‎10:E7:C6:EE:E5:03 -j ACCEPT
+sudo iptables -A INPUT -d 192.168.1.111  -p tcp --dport 139 -m mac --mac-source ‎10:E7:C6:EE:E5:03 -j ACCEPT
+sudo iptables -A INPUT -d 192.168.1.111  -p tcp --dport 445 -m mac --mac-source ‎10:E7:C6:EE:E5:03 -j ACCEPT
+
+----- SALVA CONFIGURAZIONE IPTABLES
+sudo bash -c "iptables-save > /etc/iptables.rules"
+
+----- RIPRISTINA CONFIGURAZIONE IPTABLES
+iptables-restore < /etc/iptables/rules.v4
+sudo bash -c "iptables-restore < /etc/iptables.rules"
+
+----- RIPRISTINA CONFIGURAZIONE IPTABLES DEFAULT
+sudo bash -c "iptables-restore < /etc/iptables_default.rules"
+
+-- Lista utenti
+/etc/passwd
+
+-- Lista gruppi
+/etc/groups
+

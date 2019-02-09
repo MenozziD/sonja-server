@@ -1,0 +1,12 @@
+sudo systemctl status ssh
+sudo systemctl enable ssh
+sudo systemctl start ssh
+
+Alternatively, raspi-config can be used in the terminal:
+
+Enter sudo raspi-config in a terminal window
+Select Interfacing Options
+Navigate to and select SSH
+Choose Yes
+Select Ok
+Choose Finish

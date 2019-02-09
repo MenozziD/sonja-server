@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link href="/style?file=menu.css" rel="stylesheet" type="text/css">
+    <link href="/style?file=style.css" rel="stylesheet" type="text/css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+    </style>
+    <title>Title</title>
+</head>
+<body>
+
+
+<div property="width:100%">
+    <div class="columnMenu">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; menu</span> -->
+    </div>
+    <div class="columnTitle">
+        <div id="title" class="titolo">
+            Sonja System
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/realtime">REALTIME</a>
+    <a href="#">HOME</a>
+    <a href="#">CONSOLE</a>
+</div>
+
+
+
+<center>
+<div class="img">
+  <img src="/image?file=stato_work.jpg" alt="Work" style="width:100%">
+  <div class="container">
+    <p><h1 style="font-size:8vw;" >WORK IN PROGRESS...</h1></p>
+  </div>
+</div>
+</center>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+
+Starting Nmap 7.40 ( https://nmap.org ) at 2018-09-20 18:55 CEST
+Nmap scan report for 192.168.1.1
+Host is up (0.0019s latency).
+Nmap scan report for HUAWEI_P8_lite_2017-003 (192.168.1.6)
+Host is up (0.069s latency).
+Nmap scan report for HUAWEI_P9_lite (192.168.1.9)
+Host is up (0.013s latency).
+Nmap scan report for PORT-DAVIDE-004 (192.168.1.11)
+Host is up (0.0020s latency).
+Nmap scan report for --- (192.168.1.25)
+Host is up (0.0041s latency).
+Nmap scan report for --- (192.168.1.50)
+Host is up (0.0023s latency).
+Nmap scan report for --- (192.168.1.111)
+Host is up (0.0032s latency).
+Nmap done: 256 IP addresses (7 hosts up) scanned in 3.33 seconds

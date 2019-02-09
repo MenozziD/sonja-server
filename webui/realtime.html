@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+    <link href="/style?file=menu.css" rel="stylesheet" type="text/css">
+    <link href="/style?file=style.css" rel="stylesheet" type="text/css">
+    <link href="/style?file=table.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <title>Sonja-Realtime</title>
+</head>
+<body>
+
+
+<div property="width:100%">
+    <div class="columnMenu">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; menu</span> -->
+    </div>
+    <div class="columnTitle">
+        <div id="title" class="titolo">
+            Sonja System
+        </div>
+    </div>
+</div>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/">HOMEPAGE</a>
+    <a href="/realtime">REALTIME</a>
+    <a href="/nrf24">NRF24 NETWORK</a>
+    <a href="#">CONSOLE</a>
+</div>
+
+<center>
+
+<table class="minimalistBlack">
+    <thead>
+        <tr>
+            <th width="15%">SERVIZIO</th>
+            <th width="15%">STATO</th>
+            <th width="25%">NOTE</th>
+        </tr>
+    </thead>
+
+    <tbody id ="table" class="testo">
+        <tr>
+        </tr>
+    </tbody>
+</table>
+
+    <br><br><br>
+
+<div id="panel" class="container" style="width: 40%">
+    <!--
+    <div id="panel" class="panel panel-default" >
+        <div id="nomeServizio" class="panel-heading">vsftpd</div>
+        <div class="panel-body" align="left">
+            <h3>STATO: NOT INIT</h3>
+            <h4>ULTIMO AGGIORNAMENTO: 16/06/2018</h4>
+        </div>
+        <div class="panel-footer" align="left">
+            <input type="button" onclick="sendCommand(1)" value="START" />
+            <input type="button" onclick="sendCommand(2)" value="STOP" />
+            <input type="button" onclick="sendCommand(3)" value="RESTART" />
+        </div>
+    </div>
+    -->
+</div>
+
+
+
+</center>
+
+<script language="javascript" type="text/javascript">
+
+myTimer();
+var myVar = setInterval(myTimer, 2000);
+var panelOpen=0;
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+function myTimer() {
+    loadDoc(createTable);
+    if (panelOpen == 1)
+    {
+        var servizio=document.getElementById("nomeServizio").innerText;
+        loadPanel(createPanel,servizio);
+    }
+}
+
+function loadDoc(cFunction)
+{
+    var xhttp;
+    var url="http://192.168.1.111:8080/realtimeupd";
+    xhttp=new XMLHttpRequest();
+    xhttp.onreadystatechange = function()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            cFunction(this);
+        }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+
+function createTable(xhttp)
+{
+    var txt="";
+    var res = JSON.parse(xhttp.responseText);
+
+    for (x in res) {
+      txt += "<tr>";
+      for (y in res[x]) {
+        txt +="<td>" + res[x][y] + "</td>"
+      }
+      txt += "</tr>";
+    }
+    document.getElementById("table").innerHTML=txt;
+}
+
+
+function loadPanel(cFunction,servizio)
+{
+    var xhttp;
+    var url="http://192.168.1.111:8080/servicepanel?s="+servizio;
+    xhttp=new XMLHttpRequest();
+    xhttp.onreadystatechange = function()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            cFunction(this);
+        }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+
+
+function sendCommand(nrComando,tipo) //tipo 0=Servizio;1=Script
+{
+    var xhttp;
+    var url="http://192.168.1.111:8080/";
+    c="";
+    s=document.getElementById('nomeServizio').textContent
+    if (nrComando==1)
+        c="start";
+    if (nrComando==2)
+        c="stop";
+    if (nrComando==3)
+        c="restart";
+
+    if (tipo == 0)
+        url=url+"servicecmd?s="+s+"&c="+c;
+    else
+        url=url+"scriptcmd?s="+s+"&c="+c;
+    //alert(url);
+    xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange = function()
+    {
+        /*
+        if (this.readyState == 4 && this.status == 200)
+        {
+            cFunction(this);
+        }
+        */
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+
+
+function createPanel(xhttp)
+{
+  document.getElementById("panel").innerHTML=xhttp.responseText;
+  panelOpen=1;
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+

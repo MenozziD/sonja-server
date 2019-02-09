@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1070px" height="600px"
+     viewBox="0 0 1070 600" preserveAspectRatio="xMidYMid meet">
+    <rect id="svgEditorBackground" x="0" y="0" width="1070" height="600" style="fill: none; stroke: none;"/>
+    <rect x="112.0075806623" y="80.0286689975" style="fill:khaki;stroke:black;stroke-width:1px;" id="e1_rectangle"
+          width="381.005" height="203.002"/>
+    <rect x="347.01029143974284" y="157.0295867919922" style="fill:khaki;stroke:black;stroke-width:1px;"
+          id="e2_rectangle" width="113.001327844" height="114.0013395949"/>
+    <line id="e3_line" x1="353.0103524748991" y1="229.03033447265625" x2="455.01154266044597" y2="230.03033447265625"
+          style="stroke:black;fill:none;stroke-width:1px;"/>
+    <line id="e5_line" x1="406.01102386161784" y1="235.0303955078125" x2="406.01102386161784" y2="262.0308532714844"
+          style="stroke:black;fill:none;stroke-width:1px;"/>
+    <rect x="134.008" y="96.0289" style="fill:khaki;stroke:black;stroke-width:1px;" id="e6_rectangle"
+          width="158.0018566314" height="41.0004817841"/>
+    <rect x="134.00785003349282" y="139.02935791015625" style="fill:khaki;stroke:black;stroke-width:1px;"
+          id="e8_rectangle" width="33.0003" height="43.0004"/>
+    <rect x="330.0100167815397" y="95.02884674072266" style="fill:khaki;stroke:black;stroke-width:1px;"
+          id="e9_rectangle" width="146.0017156214" height="36.00042303"/>
+</svg>

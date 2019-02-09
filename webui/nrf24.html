@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+    <link href="/style?file=menu.css" rel="stylesheet" type="text/css">
+    <link href="/style?file=style.css" rel="stylesheet" type="text/css">
+    <link href="/style?file=table.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <title>Sonja-NRF24Network</title>
+</head>
+<body>
+
+
+<div property="width:100%">
+    <div class="columnMenu">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; menu</span> -->
+    </div>
+    <div class="columnTitle">
+        <div id="title" class="titolo">
+            Sonja System
+        </div>
+    </div>
+</div>
+
+<div id="01_panel" class="container" style="width: 20%">
+    <div class="panel panel-default">
+        <div class="panel-heading">01-LUCE</div>
+        <div class="panel-body" align="left">
+            <p id="01_txtStato">STATO:  ACCESA</p>
+            <p id="01_txtInvio">INVIO:  -</p>
+
+        </div>
+        <div class="panel-footer">
+            <input type="button" id="01_btnStato" onclick="nrfcmd(100)" value="STATO" />
+            <input type="button" id="01_btnComando" onclick="nrfcmd(101)" value="ON " />
+        </div>
+    </div>
+</div>
+
+<div id="02_panel" class="container" style="width: 20%">
+    <div class="panel panel-default">
+        <div class="panel-heading">02-PIR</div>
+        <div class="panel-body" align="left">
+            <p id="02_txtStato">STATO:  ATTIVO SUONO OFF</p>
+            <p id="02_txtPresenza">ULTIMA PRESENZA: <br> dd/m/yyyy hh:mm:ss</p>
+            <p id="02_txtInvio">INVIO:  -</p>
+
+        </div>
+        <div class="panel-footer">
+            <input type="button" id="02_btnStato" onclick="nrfcmd(200)" value="STATO" />
+            <input type="button" id="02_btnComando" onclick="nrfcmd(201)" value="ATTIVA " />
+            <input type="button" id="02_Suono" onclick="nrfcmd(203)" value="ON " />
+        </div>
+    </div>
+</div>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/">HOMEPAGE</a>
+    <a href="/realtime">REALTIME</a>
+    <a href="/nrf24">NRF24 NETWORK</a>
+    <a href="#">CONSOLE</a>
+</div>
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+
+myTimer();
+var myVar = setInterval(myTimer, 2000);
+var panelOpen=0;
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+function myTimer() {
+    if (panelOpen == 1)
+    {
+
+    }
+}
+
+function nrfcmd(comando) //nodo,comando
+{
+    var xhttp;
+    var url="http://192.168.1.111:8080/";
+    c="";
+    url=url+"nrfcmd?c="+comando;
+    //alert(url);
+    xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange = function()
+    {
+        /*
+        if (this.readyState == 4 && this.status == 200)
+        {
+            cFunction(this);
+        }
+        */
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+
+
+</script>
+
+</body>
+</html>

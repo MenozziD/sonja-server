@@ -1,0 +1,184 @@
+bot START
+I am listening ...
+Got command: /ciao 283062424 283062424
+CHAT ID:283062424
+MEX:/ciao
+RISP:Ciao
+Got command: /ciao 283062424 283062424
+CHAT ID:283062424
+MEX:/ciao
+RISP:Uè
+Got command: /manga one-piece 916 283062424 283062424
+CHAT ID:283062424
+MEX:/manga one-piece 916
+_1:URL PAGE OPEN 1
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/1/
+_2:URL IMAGE READ1
+pos1: 1604
+pos2: 1733
+pos3: 1639
+_2:FILE WRITE1
+ok
+_1:URL PAGE OPEN 2
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/2/
+_2:URL IMAGE READ2
+pos1: 1604
+pos2: 1733
+pos3: 1639
+_2:FILE WRITE2
+ok
+_1:URL PAGE OPEN 3
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/3/
+_2:URL IMAGE READ3
+pos1: 1604
+pos2: 1733
+pos3: 1639
+_2:FILE WRITE3
+ok
+_1:URL PAGE OPEN 4
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/4/
+_2:URL IMAGE READ4
+pos1: 1604
+pos2: 1733
+pos3: 1639
+_2:FILE WRITE4
+ok
+_1:URL PAGE OPEN 5
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/5/
+_2:URL IMAGE READ5
+pos1: 1604
+pos2: 1733
+pos3: 1639
+_2:FILE WRITE5
+ok
+_1:URL PAGE OPEN 6
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/6/
+_2:URL IMAGE READ6
+pos1: 1604
+pos2: 1733
+pos3: 1639
+_2:FILE WRITE6
+ok
+_1:URL PAGE OPEN 7
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/7/
+_2:URL IMAGE READ7
+pos1: 1604
+pos2: 1733
+pos3: 1639
+_2:FILE WRITE7
+ok
+_1:URL PAGE OPEN 8
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/8/
+_2:URL IMAGE READ8
+pos1: 1604
+pos2: 1733
+pos3: 1639
+_2:FILE WRITE8
+ok
+_1:URL PAGE OPEN 9
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/9/
+_2:URL IMAGE READ9
+pos1: 1604
+pos2: 1733
+pos3: 1639
+_2:FILE WRITE9
+ok
+_1:URL PAGE OPEN 10
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/10/
+_2:URL IMAGE READ10
+pos1: 1607
+pos2: 1736
+pos3: 1642
+_2:FILE WRITE10
+ok
+_1:URL PAGE OPEN 11
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/11/
+_2:URL IMAGE READ11
+pos1: 1609
+pos2: 1738
+pos3: 1644
+_2:FILE WRITE11
+ok
+_1:URL PAGE OPEN 12
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/12/
+_2:URL IMAGE READ12
+pos1: 1609
+pos2: 1738
+pos3: 1644
+_2:FILE WRITE12
+ok
+_1:URL PAGE OPEN 13
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/13/
+_2:URL IMAGE READ13
+pos1: 1609
+pos2: 1738
+pos3: 1644
+_2:FILE WRITE13
+ok
+_1:URL PAGE OPEN 14
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/14/
+_2:URL IMAGE READ14
+pos1: 1609
+pos2: 1738
+pos3: 1644
+_2:FILE WRITE14
+ok
+_1:URL PAGE OPEN 15
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/15/
+_2:URL IMAGE READ15
+pos1: 1609
+pos2: 1738
+pos3: 1644
+_2:FILE WRITE15
+ok
+_1:URL PAGE OPEN 16
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/16/
+_2:URL IMAGE READ16
+pos1: 1609
+pos2: 1738
+pos3: 1644
+_2:FILE WRITE16
+ok
+_1:URL PAGE OPEN 17
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/17/
+_2:URL IMAGE READ17
+pos1: 1609
+pos2: 1738
+pos3: 1644
+_2:FILE WRITE17
+ok
+_1:URL PAGE OPEN 18
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/18/
+_2:URL IMAGE READ18
+pos1: 1609
+pos2: 1738
+pos3: 1644
+_2:FILE WRITE18
+ok
+_1:URL PAGE OPEN 19
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/19/
+_2:URL IMAGE READ19
+pos1: 1609
+pos2: 1738
+pos3: 1644
+_2:FILE WRITE19
+ok
+_1:URL PAGE OPEN 20
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/20/
+_2:URL IMAGE READ20
+pos1: 1609
+pos2: 1738
+pos3: 1644
+_2:FILE WRITE20
+ok
+_1:URL PAGE OPEN 21
+_1: http://www.mangaeden.com/it/it-manga/one-piece/916/21/
+_2:URL IMAGE READ21
+pos1: 1609
+pos2: 1738
+pos3: 1644
+_2:FILE WRITE21
+Trovata fine capitolo
+21
+/home/pi/Desktop/BotSonja/GreyMatter/memory/manga/pag_1.jpg
+RISP:!F/home/pi/Desktop/BotSonja/GreyMatter/memory/manga/one-piece_916.pdf

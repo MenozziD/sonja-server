@@ -1,0 +1,121 @@
+<html lang="it">
+  <head>
+   <meta charset="UTF-8">
+   <title>Casa</title>
+   <link rel="icon" href="http://www.comune.uragodoglio.bs.it/sites/www.comune.uragodoglio.bs.it/files/2-Hot-Home-icon.png">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+   <script type="text/javascript" src="index.js"></script>
+   <link href="style.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+   <h1 class="titolo">Benvenuto nella tua casa</h1>
+   <div id="alert" style="display:none">
+     <strong id="titAlert"></strong><span id="textAlert"></span><button class="close" onClick="closeAlert()">x</button>
+   </div>
+   <div class="col-sm-4">
+     <div class="panel panel-info">
+       <div class="panel-heading">
+         <h3 class="panel-title">Comando</h3>
+       </div>
+       <div class="panel-body">
+         <input type="text" id="comando" class="form-control input-lg campo">
+         <button class="btn btn-lg btn-primary btnInvia" onClick="inviaComando()">Invia</button>
+       </div>
+     </div>
+     <div class="panel panel-info">
+       <div class="panel-heading">
+         <h3 class="panel-title">Telecomando</h3>
+       </div>
+       <div class="panel-body">
+         <div class="col-sm-6">
+           <div class="row">
+             <button class=" btn btn-lg btn-danger glyphicon glyphicon-off " id="pow" onClick="tvCommand('pow')"></button>
+             <button class=" btn btn-lg glyphicon glyphicon-volume-off " onClick="tvCommand('noVol')"></button>
+             <button class=" btn btn-lg glyphicon glyphicon glyphicon-menu-hamburger" onClick="tvCommand('menu')"></button>
+           </div>
+           <div class="row">
+             <button class="btn btn-lg btnTel" onClick="tvCommand('1')">1</button>
+             <button class="btn btn-lg btnTel" onClick="tvCommand('2')">2</button>
+             <button class="btn btn-lg btnTel" onClick="tvCommand('3')">3</button>
+           </div>
+           <div class="row">
+             <button class="btn btn-lg btnTel" onClick="tvCommand('4')">4</button>
+             <button class="btn btn-lg btnTel" onClick="tvCommand('5')">5</button>
+             <button class="btn btn-lg btnTel" onClick="tvCommand('6')">6</button>
+           </div>
+           <div class="row">
+             <button class="btn btn-lg btnTel" onClick="tvCommand('7')">7</button>
+             <button class="btn btn-lg btnTel" onClick="tvCommand('8')">8</button>
+             <button class="btn btn-lg btnTel" onClick="tvCommand('9')">9</button>
+           </div>
+           <div class="row">
+             <button class="btn btn-lg btnTel">0</button>
+             <button class="btn btn-lg btnTel" onClick="tvCommand('info')">INFO</button>
+           </div>
+         </div>
+         <div class="col-sm-6">
+           <div class="row">
+             <button class="btn btn-lg btnTel" onClick="tvCommand('vol+')">Vol +</button>
+             <button class="btn btn-lg btnTel" onClick="tvCommand('p+')">P +</button>
+           </div>
+           <div class="row">
+             <button class="btn btn-lg btnTel" onClick="tvCommand('vol-')">Vol -</button>
+             <button class="btn btn-lg btnTel" onClick="tvCommand('p-')">P -</button>
+           </div>
+           <div class="row">
+             <button class="btn btn-lg btnTel" onClick="tvCommand('source')">SOURCE</button>
+           </div>
+           <div class="row">
+             <button class="btn btn-lg btnTel" onClick="tvCommand('exit')">EXIT</button>
+             <button class="btn btn-lg glyphicon glyphicon-menu-up btnTel" onClick="tvCommand('su')"></button>
+           </div>
+           <div class="row">
+             <button class="btn btn-lg glyphicon glyphicon-menu-left btnTel" onClick="tvCommand('sx')"></button>
+             <button class="btn btn-lg btnTel" onClick="tvCommand('p-')">OK</button>
+             <button class="btn btn-lg glyphicon glyphicon-menu-right btnTel" onClick="tvCommand('dx')"></button>
+           </div>
+           <div class="row">
+             <button class="btn btn-lg btnTel" onClick="tvCommand('back')">BACK</button>
+             <button class="btn btn-lg glyphicon glyphicon-menu-down btnTel" onClick="tvCommand('giu')"></button>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="col-sm-8">
+     <div class="panel panel-info">
+       <div class="panel-heading">
+         <h3 class="panel-title">Lo stato di casa</h3>
+       </div>
+       <div class="panel-body">
+         <div class="col-sm-4">
+           <h3>Orario: <label class="clock">22:15</label></h3>
+           <h3>Data: 14/07/2016</h3>
+           <h3>Temperatura: <label class="label label-warning">20°C</label></h3>
+           <h3>Umidità: <label class="label label-primary">30%</label></h3>
+           <h3>Pir: <label id="pi" class="label label-success">ON</label></h3>
+           <h3>Luce: <label id="luc" class="label label-danger">OFF</label></h3>
+         </div>
+         <div class="col-sm-8">
+           <h3>Max Temp: <label class="label label-danger">30°C</label> Ora: <label class="clock">13:37</label></h3>
+           <h3>Min Temp: <label class="label label-info">15°C</label> Ora: <label class="clock">4:19</label></h3>
+           <h3>Max Hum:  <label class="label label-danger">70%</label> Ora: <label class="clock">14:03</label></h3>
+           <h3>Min Hum:  <label class="label label-primary">30%</label> Ora: <label class="clock">4:00</label></h3>
+           <h3>Ultimo rilevamento pir: 14/07/2016 <label class="clock">22:15</label></h3>
+         </div>
+       </div>
+     </div>
+     <div class="panel panel-info">
+       <div class="panel-heading">
+         <h3 class="panel-title">Comando</h3>
+       </div>
+       <div class="panel-body">
+         <button class="btn btn-lg btn-primary glyphicon glyphicon-repeat" onClick="aggiorna()"></button>
+         <button class="btn btn-lg btn-success" id="luce" onClick="changeLuce()">LUCE ON</button>
+         <button class="btn btn-lg btn-danger" id="pir" onClick="changePir()">PIR OFF</button>
+       </div>
+     </div>
+   </div>
+ </body>
+</html>

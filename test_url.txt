@@ -1,0 +1,5 @@
+http://snjsys.ddns.net:20177/nrfapp?s=lampada_comando&k=551f0f2fc174442cadb95df9f957d808
+
+128537462923-udjqlps92reol03gihner46ger34sovg.apps.googleusercontent.com
+<API_KEY>
+AIzaSyAOIa3_7f6VwvIY6yyBRDj6jUGUtXfwRkE
